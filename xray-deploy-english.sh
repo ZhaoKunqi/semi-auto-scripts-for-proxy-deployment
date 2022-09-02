@@ -6,7 +6,7 @@ YELLOW="\033[33m"   # Warning message
 BLUE="\033[36m"     # Info message
 PLAIN='\033[0m'
 
-# 搭建好后无法打开伪装域名，可能是反代小说网站挂了，请在网站留言，或者Github发issue，以便替换新的网站
+# The list of camouflage sites, if your site dose not works, try change following sites yourself , or start a issues on github.
 SITES=(
 http://www.zhuizishu.com/
 http://xs.56dyc.com/
@@ -66,7 +66,7 @@ KCP="false"
 checkSystem() {
     result=$(id | awk '{print $1}')
     if [[ $result != "uid=0(root)" ]]; then
-        colorEcho $RED " 请以root身份执行该脚本"
+        colorEcho $RED " Please use root run this script, exiting......"
         exit 1
     fi
 
@@ -74,7 +74,7 @@ checkSystem() {
     if [[ "$?" != "0" ]]; then
         res=`which apt 2>/dev/null`
         if [[ "$?" != "0" ]]; then
-            colorEcho $RED " 不受支持的Linux系统"
+            colorEcho $RED " Unsupported Linux distribution, see supported and tested linux distro at https://github.com/ZhaoKunqi/semi-auto-scripts-for-proxy-deployment/blob/main/README.md#tested-and-supported-linux-distributions "
             exit 1
         fi
         PMT="apt"
@@ -89,7 +89,7 @@ checkSystem() {
     fi
     res=`which systemctl 2>/dev/null`
     if [[ "$?" != "0" ]]; then
-        colorEcho $RED " 系统版本过低，请升级到最新版本"
+        colorEcho $RED " Unsupported Linux distribution, see supported and tested linux distro at https://github.com/ZhaoKunqi/semi-auto-scripts-for-proxy-deployment/blob/main/README.md#tested-and-supported-linux-distributions"
         exit 1
     fi
 }
