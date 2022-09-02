@@ -1,16 +1,14 @@
 # A collection of scripts used for proxy deployment
 
-<!--platinum sponsors start-->
-
-<p align="center">
-  <a href="https://www.doppler.com/?utm_campaign=github_repo&utm_medium=referral&utm_content=frp&utm_source=github" target="_blank">
-    <img width="400px" src="https://www.vyprvpn.com/static/prod/lead-images/Guide-Pages/vpn_guides_circumvent_great_firewall_banner.png">
-  </a>
-</p>
-
-<!--platinum sponsors end-->
-
 ## xray_upgraded_from_hijk.sh
+
+####功能说明:
+
+用来部署xray服务端, 可以自动处理一些SSL/WebSocket的花活, 目前只提供简体中文版.
+
+和原版最大的差别就是更改了一些需要原作者网站API的地方, 转用Shell方式或者公用API来解决.
+
+说实话我不太懂为啥原作者要在脚本里加那么多自己网站的API, 对脚本使用者带来了潜在的安全隐患, 而且自己网站关了以后脚本直接失效, 不是很懂.
 
 #### semi-auto shell script that can make deployment of Xray much easier, tested in RHEL(CentOS/RockyLinux/AlmaLinux/OracleLinux) 7/8/9/Stream
 
