@@ -2,7 +2,7 @@
 
 ## xray_upgraded_from_hijk.sh
 
-####功能说明:
+#### 功能说明:
 
 用来部署xray服务端, 可以自动处理一些SSL/WebSocket的花活, 目前只提供简体中文版.
 
