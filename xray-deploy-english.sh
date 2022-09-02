@@ -8,18 +8,13 @@ PLAIN='\033[0m'
 
 # The list of camouflage sites, if your site dose not works, try change following sites yourself , or start a issues on github.
 SITES=(
-http://www.zhuizishu.com/
-http://xs.56dyc.com/
-http://www.ddxsku.com/
-http://www.biqu6.com/
-https://www.wenshulou.cc/
-http://www.55shuba.com/
-http://www.39shubao.com/
-https://www.23xsw.cc/
-https://www.jueshitangmen.info/
-https://www.zhetian.org/
-http://www.bequgexs.com/
-http://www.tjwl.com/
+https://ceph.io/
+https://www.redhat.com/
+https://kubernetes.io/
+https://about.gitlab.com/
+https://docs.ceph.com/
+https://en.wikipedia.org/
+https://keybase.io/
 )
 
 CONFIG_FILE="/usr/local/etc/xray/config.json"
@@ -29,8 +24,8 @@ V6_PROXY=""
 IP=`curl -sL -4 https://myip.wtf/text`
 if [[ "$?" != "0" ]]; then
     IP=`curl -sL -6 https://myip.wtf/text`
-    #V6_PROXY="https://gh.hijk.art/"
-    echo 'nameserver 2a0b:f4c0:4d:53::1
+    cat > /etc/resolv.conf <<EOF
+nameserver 2a0b:f4c0:4d:53::1
 nameserver 2a01:4f8:221:2d08::213
 nameserver 2001:67c:27e4:15::6411
 nameserver 2001:67c:27e4::64
@@ -45,7 +40,7 @@ nameserver 2001:67c:2960:6464:6464:6464:6464:6464
 nameserver 2001:67c:2b0::4
 nameserver 2001:67c:2b0::6
 nameserver 2a03:7900:2:0:31:3:104:161
-' > /etc/resolv.conf
+EOF
 fi
 
 BT="false"
