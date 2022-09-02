@@ -1,4 +1,4 @@
-# A collection of scripts used for proxy deployment
+# A collection of scripts used for proxy deployment, WIP !
 
 ## xray_upgraded_from_hijk.sh
 
@@ -10,6 +10,11 @@
 
 说实话我不太懂为啥原作者要在脚本里加那么多自己网站的API, 对脚本使用者带来了潜在的安全隐患, 而且自己网站关了以后脚本直接失效, 不是很懂.
 
-#### semi-auto shell script that can make deployment of Xray much easier, tested in RHEL(CentOS/RockyLinux/AlmaLinux/OracleLinux) 7/8/9/Stream
+#### Tested and Supported Linux distributions
+
+1. CentOS 7/8，CentOS Stream 8/9
+  
+2. Rocky Linux and Alma Linux 8/9
+  
 
 this works, but only simplified chinese version currently available, translation still work in progress(very slowly)
