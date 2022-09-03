@@ -12,7 +12,6 @@ https://www.centos.org/
 https://rockylinux.org/
 https://almalinux.org/
 https://www.openstack.org/
-https://www.okd.io/
 https://kubernetes.io/
 https://podman.io/
 https://ceph.io/
