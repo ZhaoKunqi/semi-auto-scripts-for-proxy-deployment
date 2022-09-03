@@ -1,5 +1,5 @@
-# A collection of scripts used for proxy deployment, WIP !
-
+# A collection of scripts used for proxy deployment, working in progress !
+# 一些用来简化代理部署的脚本, 正在施工状态, 不是很好用!
 ## xray_upgraded_from_hijk.sh
 
 #### 功能说明:
