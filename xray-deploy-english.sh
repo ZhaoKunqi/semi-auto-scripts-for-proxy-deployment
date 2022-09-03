@@ -8,13 +8,15 @@ PLAIN='\033[0m'
 
 # The list of camouflage sites, if your site dose not works, try change following sites yourself , or start a issues on github.
 SITES=(
-https://ceph.io/
-https://www.redhat.com/
+https://www.centos.org/
+https://rockylinux.org/
+https://almalinux.org/
+https://www.openstack.org/
+https://www.okd.io/
 https://kubernetes.io/
-https://about.gitlab.com/
-https://docs.ceph.com/
-https://en.wikipedia.org/
-https://keybase.io/
+https://podman.io/
+https://ceph.io/
+https://libvirt.org/
 )
 
 CONFIG_FILE="/usr/local/etc/xray/config.json"
