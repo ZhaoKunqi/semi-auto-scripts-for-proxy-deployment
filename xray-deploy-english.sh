@@ -256,12 +256,12 @@ archAffix(){
 getData() {
     if [[ "$TLS" = "true" || "$XTLS" = "true" ]]; then
         echo ""
-        echo " Xray一键脚本，运行之前请确认如下条件已经具备："
-        colorEcho ${YELLOW} "  1. 一个伪装域名"
-        colorEcho ${YELLOW} "  2. 伪装域名DNS解析指向当前服务器ip（${IP}）"
-        colorEcho ${BLUE} "  3. 如果/root目录下有 xray.pem 和 xray.key 证书密钥文件，无需理会条件2"
+        echo " xray deployment script, make sure you satisfy the following requirements："
+        colorEcho ${YELLOW} "  1. A domain for camouflage proxy traffic"
+        colorEcho ${YELLOW} "  2. The domain have DNS record pointed to this server, current IP:（${IP}）"
+        colorEcho ${BLUE} "  3. If you already have xray.pem & xray.key keyfile at /root dir, requirement 2 is not needed."
         echo " "
-        read -p " 确认满足按y，按其他退出脚本：" answer
+        read -p " press y if requirement fulfilled, any other key to exit：" answer
         if [[ "${answer,,}" != "y" ]]; then
             exit 0
         fi
@@ -269,9 +269,9 @@ getData() {
         echo ""
         while true
         do
-            read -p " 请输入伪装域名：" DOMAIN
+            read -p " your domain：" DOMAIN
             if [[ -z "${DOMAIN}" ]]; then
-                colorEcho ${RED} " 域名输入错误，请重新输入！"
+                colorEcho ${RED} " domain error, please try again."
             else
                 break
             fi
