@@ -1703,15 +1703,15 @@ outputVmessWS() {
 showInfo() {
     res=`status`
     if [[ $res -lt 2 ]]; then
-        colorEcho $RED " Xray未安装，请先安装！"
+        colorEcho $RED " xray is not installed, please install it first."
         return
     fi
     
     echo ""
-    echo -n -e " ${BLUE}Xray运行状态：${PLAIN}"
+    echo -n -e " ${BLUE}Xray current status：${PLAIN}"
     statusText
-    echo -e " ${BLUE}Xray配置文件: ${PLAIN} ${RED}${CONFIG_FILE}${PLAIN}"
-    colorEcho $BLUE " Xray配置信息："
+    echo -e " ${BLUE}Xray configuration file: ${PLAIN} ${RED}${CONFIG_FILE}${PLAIN}"
+    colorEcho $BLUE " Xrayconfiguration info："
 
     getConfigFileInfo
 
@@ -1791,12 +1791,7 @@ showLog() {
 menu() {
     clear
     echo "#############################################################"
-    echo -e "#                     ${RED}Xray一键安装脚本${PLAIN}                      #"
-    echo -e "# ${GREEN}作者${PLAIN}: 网络跳越(hijk)                                      #"
-    echo -e "# ${GREEN}网址${PLAIN}: https://hijk.art                                    #"
-    echo -e "# ${GREEN}论坛${PLAIN}: https://hijk.club                                   #"
-    echo -e "# ${GREEN}TG群${PLAIN}: https://t.me/hijkclub                               #"
-    echo -e "# ${GREEN}Youtube频道${PLAIN}: https://youtube.com/channel/UCYTB--VsObzepVJtc9yvUxQ #"
+    echo -e "#     ${RED}Xray easy installation script${PLAIN}        #"
     echo "#############################################################"
     echo -e "  ${GREEN}1.${PLAIN}   安装Xray-VMESS"
     echo -e "  ${GREEN}2.${PLAIN}   安装Xray-${BLUE}VMESS+mKCP${PLAIN}"
