@@ -1807,19 +1807,19 @@ menu() {
     echo -e "  ${GREEN}11.${PLAIN}  更新Xray"
     echo -e "  ${GREEN}12.  ${RED}卸载Xray${PLAIN}"
     echo " -------------"
-    echo -e "  ${GREEN}13.${PLAIN}  启动Xray"
-    echo -e "  ${GREEN}14.${PLAIN}  重启Xray"
-    echo -e "  ${GREEN}15.${PLAIN}  停止Xray"
+    echo -e "  ${GREEN}13.${PLAIN}  Start Xray"
+    echo -e "  ${GREEN}14.${PLAIN}  Restart Xray"
+    echo -e "  ${GREEN}15.${PLAIN}  Stop Xray"
     echo " -------------"
-    echo -e "  ${GREEN}16.${PLAIN}  查看Xray配置"
-    echo -e "  ${GREEN}17.${PLAIN}  查看Xray日志"
+    echo -e "  ${GREEN}16.${PLAIN}  Check Xray configs"
+    echo -e "  ${GREEN}17.${PLAIN}  Check Xray logs"
     echo " -------------"
-    echo -e "  ${GREEN}0.${PLAIN}   退出"
-    echo -n " 当前状态："
+    echo -e "  ${GREEN}0.${PLAIN}   Exit"
+    echo -n " Current Status："
     statusText
     echo 
 
-    read -p " 请选择操作[0-17]：" answer
+    read -p " Please choose [0-17]：" answer
     case $answer in
         0)
             exit 0
@@ -1895,7 +1895,7 @@ menu() {
             showLog
             ;;
         *)
-            colorEcho $RED " 请选择正确的操作！"
+            colorEcho $RED " Please chose correct option!"
             exit 1
             ;;
     esac
@@ -1910,7 +1910,7 @@ case "$action" in
         ${action}
         ;;
     *)
-        echo " 参数错误"
-        echo " 用法: `basename $0` [menu|update|uninstall|start|restart|stop|showInfo|showLog]"
+        echo " invalid option"
+        echo " Usage: `basename $0` [menu|update|uninstall|start|restart|stop|showInfo|showLog]"
         ;;
 esac
