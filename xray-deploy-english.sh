@@ -1613,31 +1613,31 @@ outputVmess() {
 }
 
 outputVmessKCP() {
-    echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
-    echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
-    echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
-    echo -e "   ${BLUE}额外id(alterid)：${PLAIN} ${RED}${alterid}${PLAIN}"
-    echo -e "   ${BLUE}加密方式(security)：${PLAIN} ${RED}auto${PLAIN}"
-    echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}"
-    echo -e "   ${BLUE}伪装类型(type)：${PLAIN} ${RED}${type}${PLAIN}"
+    echo -e "   ${BLUE}ip address: ${PLAIN} ${RED}${IP}${PLAIN}"
+    echo -e "   ${BLUE}port：${PLAIN}${RED}${port}${PLAIN}"
+    echo -e "   ${BLUE}uuid：${PLAIN}${RED}${uid}${PLAIN}"
+    echo -e "   ${BLUE}alterid：${PLAIN} ${RED}${alterid}${PLAIN}"
+    echo -e "   ${BLUE}security：${PLAIN} ${RED}auto${PLAIN}"
+    echo -e "   ${BLUE}network：${PLAIN} ${RED}${network}${PLAIN}"
+    echo -e "   ${BLUE}type：${PLAIN} ${RED}${type}${PLAIN}"
     echo -e "   ${BLUE}mkcp seed：${PLAIN} ${RED}${seed}${PLAIN}" 
 }
 
 outputTrojan() {
     if [[ "$xtls" = "true" ]]; then
-        echo -e "   ${BLUE}IP/域名(address): ${PLAIN} ${RED}${domain}${PLAIN}"
-        echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
-        echo -e "   ${BLUE}密码(password)：${PLAIN}${RED}${password}${PLAIN}"
-        echo -e "   ${BLUE}流控(flow)：${PLAIN}$RED$flow${PLAIN}"
-        echo -e "   ${BLUE}加密(encryption)：${PLAIN} ${RED}none${PLAIN}"
-        echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}" 
-        echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}XTLS${PLAIN}"
+        echo -e "   ${BLUE}IP address: ${PLAIN} ${RED}${domain}${PLAIN}"
+        echo -e "   ${BLUE}port：${PLAIN}${RED}${port}${PLAIN}"
+        echo -e "   ${BLUE}password：${PLAIN}${RED}${password}${PLAIN}"
+        echo -e "   ${BLUE}flow：${PLAIN}$RED$flow${PLAIN}"
+        echo -e "   ${BLUE}encryption：${PLAIN} ${RED}none${PLAIN}"
+        echo -e "   ${BLUE}network：${PLAIN} ${RED}${network}${PLAIN}" 
+        echo -e "   ${BLUE}tls：${PLAIN}${RED}XTLS${PLAIN}"
     else
-        echo -e "   ${BLUE}IP/域名(address): ${PLAIN} ${RED}${domain}${PLAIN}"
-        echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
-        echo -e "   ${BLUE}密码(password)：${PLAIN}${RED}${password}${PLAIN}"
-        echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}" 
-        echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
+        echo -e "   ${BLUE}IP address: ${PLAIN} ${RED}${domain}${PLAIN}"
+        echo -e "   ${BLUE}port：${PLAIN}${RED}${port}${PLAIN}"
+        echo -e "   ${BLUE}password：${PLAIN}${RED}${password}${PLAIN}"
+        echo -e "   ${BLUE}network：${PLAIN} ${RED}${network}${PLAIN}" 
+        echo -e "   ${BLUE}tls：${PLAIN}${RED}TLS${PLAIN}"
     fi
 }
 
