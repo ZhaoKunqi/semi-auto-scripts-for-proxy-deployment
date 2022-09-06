@@ -281,15 +281,15 @@ getData() {
 
         echo ""
         if [[ -f ~/xray.pem && -f ~/xray.key ]]; then
-            colorEcho ${BLUE}  " 检测到自有证书，将使用其部署"
+            colorEcho ${BLUE}  " Certificate detected, deploying with that..."
             CERT_FILE="/usr/local/etc/xray/${DOMAIN}.pem"
             KEY_FILE="/usr/local/etc/xray/${DOMAIN}.key"
         else
             resolve=`dig +short ${DOMAIN} A `
             res=`echo -n ${resolve} | grep ${IP}`
             if [[ -z "${res}" ]]; then
-                colorEcho ${BLUE}  "${DOMAIN} 解析结果：${resolve}"
-                colorEcho ${RED}  " 域名未解析到当前服务器IP(${IP})!"
+                colorEcho ${BLUE}  "${DOMAIN} DNS Resolve：${resolve}"
+                colorEcho ${RED}  " You domain dose not have DNS record to this IP (${IP})!"
                 exit 1
             fi
         fi
@@ -298,17 +298,17 @@ getData() {
     echo ""
     if [[ "$(needNginx)" = "no" ]]; then
         if [[ "$TLS" = "true" ]]; then
-            read -p " 请输入xray监听端口[强烈建议443，默认443]：" PORT
+            read -p " Please enter xray port[recommend 443，default 443]：" PORT
             [[ -z "${PORT}" ]] && PORT=443
         else
-            read -p " 请输入xray监听端口[100-65535的一个数字]：" PORT
+            read -p " Please enter xray port[100-65535]：" PORT
             [[ -z "${PORT}" ]] && PORT=`shuf -i200-65000 -n1`
             if [[ "${PORT:0:1}" = "0" ]]; then
-                colorEcho ${RED}  " 端口不能以0开头"
+                colorEcho ${RED}  " port dose not start with 0"
                 exit 1
             fi
         fi
-        colorEcho ${BLUE}  " xray端口：$PORT"
+        colorEcho ${BLUE}  " xray port：$PORT"
     else
         read -p " 请输入Nginx监听端口[100-65535的一个数字，默认443]：" PORT
         [[ -z "${PORT}" ]] && PORT=443
