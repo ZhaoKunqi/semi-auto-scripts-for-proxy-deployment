@@ -143,19 +143,19 @@ statusText() {
     res=`status`
     case $res in
         2)
-            echo -e ${GREEN}已安装${PLAIN} ${RED}未运行${PLAIN}
+            echo -e ${GREEN}Installed${PLAIN} ${RED}Not running${PLAIN}
             ;;
         3)
-            echo -e ${GREEN}已安装${PLAIN} ${GREEN}Xray正在运行${PLAIN}
+            echo -e ${GREEN}Installed${PLAIN} ${GREEN}Xray running${PLAIN}
             ;;
         4)
-            echo -e ${GREEN}已安装${PLAIN} ${GREEN}Xray正在运行${PLAIN}, ${RED}Nginx未运行${PLAIN}
+            echo -e ${GREEN}Installed${PLAIN} ${GREEN}Xray running${PLAIN}, ${RED}Nginx not running${PLAIN}
             ;;
         5)
-            echo -e ${GREEN}已安装${PLAIN} ${GREEN}Xray正在运行, Nginx正在运行${PLAIN}
+            echo -e ${GREEN}Installed${PLAIN} ${GREEN}Xray running, Nginx running${PLAIN}
             ;;
         *)
-            echo -e ${RED}未安装${PLAIN}
+            echo -e ${RED}Not Installed${PLAIN}
             ;;
     esac
 }
@@ -187,7 +187,7 @@ getVersion() {
     NEW_VER="$(normalizeVersion "$(curl -s "${TAG_URL}" --connect-timeout 10| grep 'tag_name' | cut -d\" -f4)")"
 
     if [[ $? -ne 0 ]] || [[ $NEW_VER == "" ]]; then
-        colorEcho $RED " 检查Xray版本信息失败，请检查网络"
+        colorEcho $RED " Error while checking xray version, please check Internet connection !"
         return 3
     elif [[ $RETVAL -ne 0 ]];then
         return 2
@@ -245,7 +245,7 @@ archAffix(){
             echo 's390x'
         ;;
         *)
-            colorEcho $RED " 不支持的CPU架构！"
+            colorEcho $RED " Unsupported CPU architecture"
             exit 1
         ;;
     esac
@@ -277,7 +277,7 @@ getData() {
             fi
         done
         DOMAIN=${DOMAIN,,}
-        colorEcho ${BLUE}  " 伪装域名(host)：$DOMAIN"
+        colorEcho ${BLUE}  " camouflage domain(host)：$DOMAIN"
 
         echo ""
         if [[ -f ~/xray.pem && -f ~/xray.key ]]; then
@@ -350,7 +350,7 @@ getData() {
                 HEADER_TYPE="none"
                 ;;
         esac
-        colorEcho $BLUE " 伪装类型：$HEADER_TYPE"
+        colorEcho $BLUE " camouflage type：$HEADER_TYPE"
         SEED=`cat /proc/sys/kernel/random/uuid`
     fi
 
@@ -458,7 +458,7 @@ getData() {
             esac
         fi
         REMOTE_HOST=`echo ${PROXY_URL} | cut -d/ -f3`
-        colorEcho $BLUE " 伪装网站：$PROXY_URL"
+        colorEcho $BLUE " camouflage site：$PROXY_URL"
 
         echo ""
         colorEcho $BLUE "  是否允许搜索引擎爬取网站？[默认：不允许]"
@@ -476,15 +476,15 @@ getData() {
     fi
 
     echo ""
-    read -p " 是否安装BBR(默认安装)?[y/n]:" NEED_BBR
+    read -p " Install and Enable BBR(Default Yes)?[y/n]:" NEED_BBR
     [[ -z "$NEED_BBR" ]] && NEED_BBR=y
     [[ "$NEED_BBR" = "Y" ]] && NEED_BBR=y
-    colorEcho $BLUE " 安装BBR：$NEED_BBR"
+    colorEcho $BLUE " Install BBR：$NEED_BBR"
 }
 
 installNginx() {
     echo ""
-    colorEcho $BLUE " 安装nginx..."
+    colorEcho $BLUE " installing nginx..."
     if [[ "$BT" = "false" ]]; then
         if [[ "$PMT" = "yum" ]]; then
             $CMD_INSTALL epel-release
