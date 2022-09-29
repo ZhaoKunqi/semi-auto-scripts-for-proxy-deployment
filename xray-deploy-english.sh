@@ -1764,16 +1764,16 @@ showInfo() {
             echo -e " ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
             echo -e " ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
         else
-            echo -e " ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
-            echo -e " ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
-            echo -e " ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
-            echo -e " ${BLUE}流控(flow)：${PLAIN}$RED$flow${PLAIN}"
-            echo -e " ${BLUE}加密(encryption)：${PLAIN} ${RED}none${PLAIN}"
-            echo -e " ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}" 
-            echo -e " ${BLUE}伪装类型(type)：${PLAIN}${RED}none$PLAIN"
-            echo -e " ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
-            echo -e " ${BLUE}路径(path)：${PLAIN}${RED}${wspath}${PLAIN}"
-            echo -e " ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
+            echo -e " ${BLUE}IP address: ${PLAIN} ${RED}${IP}${PLAIN}"
+            echo -e " ${BLUE}port：${PLAIN}${RED}${port}${PLAIN}"
+            echo -e " ${BLUE}uuid：${PLAIN}${RED}${uid}${PLAIN}"
+            echo -e " ${BLUE}flow controller：${PLAIN}$RED$flow${PLAIN}"
+            echo -e " ${BLUE}encryption：${PLAIN} ${RED}none${PLAIN}"
+            echo -e " ${BLUE}network transfer protocol：${PLAIN} ${RED}${network}${PLAIN}" 
+            echo -e " ${BLUE}camouflage type：${PLAIN}${RED}none$PLAIN"
+            echo -e " ${BLUE}camouflage hostname：${PLAIN}${RED}${domain}${PLAIN}"
+            echo -e " ${BLUE}path：${PLAIN}${RED}${wspath}${PLAIN}"
+            echo -e " ${BLUE}tls：${PLAIN}${RED}TLS${PLAIN}"
         fi
     fi
 }
