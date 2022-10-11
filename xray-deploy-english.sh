@@ -8,14 +8,11 @@ PLAIN='\033[0m'
 
 # The list of camouflage sites, if your site dose not works, try change following sites yourself , or start a issues on github.
 SITES=(
-https://www.centos.org/
-https://rockylinux.org/
-https://almalinux.org/
-https://www.openstack.org/
-https://kubernetes.io/
-https://podman.io/
-https://ceph.io/
-https://libvirt.org/
+https://www.openstack.org
+https://kubernetes.io
+https://podman.io
+https://ceph.io
+https://libvirt.org
 )
 
 CONFIG_FILE="/usr/local/etc/xray/config.json"
@@ -285,7 +282,7 @@ getData() {
             CERT_FILE="/usr/local/etc/xray/${DOMAIN}.pem"
             KEY_FILE="/usr/local/etc/xray/${DOMAIN}.key"
         else
-            resolve=`dig +short ${DOMAIN} ANY `
+            resolve=`dig +short ${DOMAIN}  `
             res=`echo -n ${resolve} | grep ${IP}`
             if [[ -z "${res}" ]]; then
                 colorEcho ${BLUE}  "${DOMAIN} DNS Resolve：${resolve}"
@@ -408,13 +405,13 @@ getData() {
         echo ""
         colorEcho $BLUE " 请选择伪装站类型:"
         echo "   1) 静态网站(位于/usr/share/nginx/html)"
-        echo "   2) 小说站(随机选择)"
-        echo "   3) 美女站(https://imeizi.me)"
-        echo "   4) 高清壁纸站(https://bing.imeizi.me)"
-        echo "   5) 自定义反代站点(需以http或者https开头)"
-        read -p "  请选择伪装网站类型[默认:高清壁纸站]" answer
+        echo "   2) 随机选择"
+        echo "   3) Podman(https://podman.io/)"
+        echo "   4) Ceph(https://ceph.io/)"
+        echo "   5) Custom(需以http或者https开头)"
+        read -p "  请选择伪装网站类型[默认:Podman]" answer
         if [[ -z "$answer" ]]; then
-            PROXY_URL="https://bing.imeizi.me"
+            PROXY_URL="https://podman.io"
         else
             case $answer in
             1)
@@ -428,7 +425,7 @@ getData() {
                     index=`shuf -i0-${len} -n1`
                     PROXY_URL=${SITES[$index]}
                     host=`echo ${PROXY_URL} | cut -d/ -f3`
-                    ip=`dig +short ${host} ANY `
+                    ip=`dig +short ${host}  `
                     res=`echo -n ${ip} | grep ${host}`
                     if [[ "${res}" = "" ]]; then
                         echo "$ip $host" >> /etc/hosts
@@ -437,10 +434,10 @@ getData() {
                 done
                 ;;
             3)
-                PROXY_URL="https://imeizi.me"
+                PROXY_URL="https://podman.io"
                 ;;
             4)
-                PROXY_URL="https://bing.imeizi.me"
+                PROXY_URL="https://ceph.io"
                 ;;
             5)
                 read -p " 请输入反代站点(以http或者https开头)：" PROXY_URL
