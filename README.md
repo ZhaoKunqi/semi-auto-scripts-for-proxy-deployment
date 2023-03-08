@@ -1,6 +1,10 @@
 # A collection of scripts used for proxy deployment, working in progress !
-# 一些用来简化代理部署的脚本, 正在施工状态, 不是很好用!
-## xray_upgraded_from_hijk.sh
+
+## 请使用 xray-deploy-english.sh
+
+wget https://github.com/ZhaoKunqi/semi-auto-scripts-for-proxy-deployment/raw/main/xray-deploy-english.sh ; sh xray-deploy-english.sh
+
+2023-03-09：安装时版本错误和更新时版本错误的问题已经修复
 
 #### 功能说明:
 
