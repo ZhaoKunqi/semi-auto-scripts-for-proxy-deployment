@@ -2,8 +2,10 @@
 
 ## 请使用 xray-deploy-english.sh
 
-```wget https://github.com/ZhaoKunqi/semi-auto-scripts-for-proxy-deployment/raw/main/xray-deploy-english.sh 
-sh xray-deploy-english.sh```
+```
+wget https://github.com/ZhaoKunqi/semi-auto-scripts-for-proxy-deployment/raw/main/xray-deploy-english.sh 
+sh xray-deploy-english.sh
+```
 
 2023-03-09 已经修复：安装时版本错误和更新时版本错误的问题
 
