@@ -181,7 +181,7 @@ getVersion() {
     RETVAL=$?
     CUR_VER="$(normalizeVersion "$(echo "$VER" | head -n 1 | cut -d " " -f2)")"
     TAG_URL="${V6_PROXY}https://api.github.com/repos/XTLS/Xray-core/releases/latest"
-    NEW_VER="$(normalizeVersion "$(curl -s "${TAG_URL}" --connect-timeout 10| grep 'tag_name' | cut -d\" -f4)")"
+    NEW_VER="$(curl -Ss https://api.github.com/repos/XTLS/Xray-core/releases/latest | jq -r ".tag_name")"
 
     if [[ $? -ne 0 ]] || [[ $NEW_VER == "" ]]; then
         colorEcho $RED " Error while checking xray version, please check Internet connection !"
@@ -1369,7 +1369,7 @@ install() {
     $PMT clean all
     [[ "$PMT" = "apt" ]] && $PMT update
     #echo $CMD_UPGRADE | bash
-    $CMD_INSTALL wget vim unzip tar gcc openssl
+    $CMD_INSTALL wget vim unzip tar gcc openssl jq
     $CMD_INSTALL net-tools
     if [[ "$PMT" = "apt" ]]; then
         $CMD_INSTALL libssl-dev g++
