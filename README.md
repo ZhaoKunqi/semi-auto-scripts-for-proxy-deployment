@@ -1,27 +1,32 @@
-# A collection of scripts used for proxy deployment, working in progress !
+# 用来半自动部署各种类型Proxy服务器的Shell脚本，有许多选项，自动化了复杂的设置过程。
 
 ## 请使用 xray-deploy-english.sh
 
+简单使用例：
+
 ```
-wget https://github.com/ZhaoKunqi/semi-auto-scripts-for-proxy-deployment/raw/main/xray-deploy-english.sh 
+wget https://github.com/ZhaoKunqi/semi-auto-scripts-for-proxy-deployment/raw/main/xray-deploy-english.sh
+chmod +x xray-deploy-english.sh
 sh xray-deploy-english.sh
 ```
+#### 修改日志:
 
 2023-03-09 已经修复：安装时版本错误和更新时版本错误的问题
 
 #### 功能说明:
 
-用来部署xray服务端, 可以自动处理一些SSL/WebSocket的花活, 目前只提供简体中文版.
+用来部署xray服务端, 可以自动化设置SSL/WebSocket的功能.
 
 和原版最大的差别就是更改了一些需要原作者网站API的地方, 转用Shell方式或者公用API来解决.
 
-说实话我不太懂为啥原作者要在脚本里加那么多自己网站的API, 对脚本使用者带来了潜在的安全隐患, 而且自己网站关了以后脚本直接失效, 不是很懂.
+原版脚本里加了很多自己私有API, 有潜在的安全风险, 而且原版脚本中使用的大部分私有API都失效了，原版脚本也失效无法使用,所以才有了这个修改版.
 
-#### Tested and Supported Linux distributions
+#### 推荐使用的服务器操作系统:
 
-1. CentOS 7/8，CentOS Stream 8/9
-  
-2. Rocky Linux and Alma Linux 8/9
-  
+1. CentOS 7 / CentOS Stream 8 / CentOS Stream 9(推荐)
+ 
+2. Alma Linux 8 / Alma Linux 9(推荐)
 
-this works, but only simplified chinese version currently available, translation still work in progress(very slowly)
+3. Rocky Linux 8 / Rocky Linux 9(推荐)
+
+##### 原版脚本支援Debian系服务器操作系统，但是由于本人不会使用这个发行版分支，所以也没有在Debian系操作系统下做测试
